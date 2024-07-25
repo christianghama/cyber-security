@@ -20,6 +20,9 @@ The hashing logic in this exercise is as follows:
 5. Each Reviewer sends the spreadsheet back to the Author containing its notes (either in the email or a separate document).
 6. The Author runs a **hash review algorithm** which will verify whether the data in the table has been changed and inform the Author.
 
+Let's see how it looks in practice:
+
+
 
 [^1]: You can see that I am using only confidential information, such as address, credit card number, password etc., which looks weird, but this is because I have the intention to use this table for another exercise about cryptography.
 

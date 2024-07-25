@@ -5,4 +5,6 @@ The exercise consists of processing a given hypotetical Excel table which contai
 
 ## The source table
 
-The source Excel table is available in the spreadsheet 
+The source Excel table is available in the spreadsheet (Excel_Hash.xlsm) and consists of a hypothetic list of people's information, as shown below:
+
+(table-sample.png)

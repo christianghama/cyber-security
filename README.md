@@ -5,6 +5,22 @@ The exercise consists of processing a given hypotetical Excel table which contai
 
 ## The source table
 
-The source Excel table is available in the spreadsheet (Excel_Hash.xlsm) and consists of a hypothetic list of people's information, as shown below:
+The source Excel table is available in the spreadsheet ![Excel_Hash](Excel_Hash.xlsm) and consists of a hypothetic list of people's information[^1], as shown below:
 
-(table-sample.png)
+![table](table-sample.png)
+
+## The hashing logic
+
+The hashing logic in this exercise is as follows:
+
+1. The Author creates the spreadsheet containing the table above.
+2. The Author runs a **hash creation algorithm** which creates a hash code from every line in the table.
+3. The Author saves the spreadsheet and sends it for the Reviewers.
+4. The Reviewers open the spreadsheet and review the information. In this hypothetical scenario, the Reviewers can make notes about their reviews in a separate document or even in the body of the email, **but never** in the spreadsheet, nor changing any of its information to meet their requirements (I know this looks unreal, but creating a realistic scenario is not my target here, but the hashing exercise itself).
+5. Each Reviewer sends the spreadsheet back to the Author containing its notes (either in the email or a separate document).
+6. The Author runs a **hash review algorithm** which will verify whether the data in the table has been changed and inform the Author.
+
+
+[^1]: You can see that I am using only confidential information, such as address, credit card number, password etc., which looks weird, but this is because I have the intention to use this table for another exercise about cryptography.
+
+

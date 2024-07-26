@@ -29,11 +29,15 @@ Let's see how it looks in practice:
 
 **Step 2:** By pressing ALT+F8 the Author can access the Excel's interface for macro execution. Then, he must select the **GenerateHash** macro and click on *Execute*.
 
-![macro](/Images/Generate-Hash-2.png)
+![image](/Images/Generate-Hash-2.png)
 
 The macro script will then executes the hashing algorithm and inform whether the process was or not performed sucessfully:
 
-![macro](/Images/hash-completed.png)
+![image](/Images/hash-completed-2.png)
+
+The codes are always generated in the second column after the final column of data in the spreadsheet (in the example, column H):
+
+![image](/Images/hash-codes.png)
 
 
 [^1]: You can see that I am using only confidential information, such as address, credit card number, password etc., which looks weird, but this is because I have the intention to use this table for another exercise about cryptography.

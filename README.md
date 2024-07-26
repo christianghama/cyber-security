@@ -29,7 +29,7 @@ Let's see how it looks in practice:
 
 **Step 2:** By pressing ALT+F8 the Author can access the Excel's interface for macro execution. Then, he must select the **GenerateHash** macro and click on *Execute*.
 
-![macro](/Images/Generate-Hash.png)
+![macro](/Images/Generate-Hash-2.png)
 
 The macro script will then executes the hashing algorithm and inform whether the process was or not performed sucessfully:
 

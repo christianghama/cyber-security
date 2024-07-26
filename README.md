@@ -33,7 +33,7 @@ Let's see how it looks in practice:
 
 The macro script will then executes the hashing algorithm and inform whether the process was or not performed sucessfully:
 
-![macro](/Images/hash-completed.png)
+![macro](/Images/hash-completed-2.png)
 
 
 [^1]: You can see that I am using only confidential information, such as address, credit card number, password etc., which looks weird, but this is because I have the intention to use this table for another exercise about cryptography.

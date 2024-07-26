@@ -7,21 +7,33 @@ The exercise consists of processing a given hypotetical Excel table which contai
 
 The source Excel table is available in the spreadsheet ![Excel_Hash](Excel_Hash.xlsm) and consists of a hypothetic list of people's information[^1], as shown below:
 
-![table](table-sample.png)
+![table](/Images/table-sample.png)
 
 ## The hashing logic
 
 The hashing logic in this exercise is as follows:
 
-1. The Author creates the spreadsheet containing the table above.
-2. The Author runs a **hash creation algorithm** which creates a hash code from every line in the table.
-3. The Author saves the spreadsheet and sends it for the Reviewers.
-4. The Reviewers open the spreadsheet and review the information. In this hypothetical scenario, the Reviewers can make notes about their reviews in a separate document or even in the body of the email, **but never** in the spreadsheet, nor changing any of its information to meet their requirements (I know this looks unreal, but creating a realistic scenario is not my target here, but the hashing exercise itself).
-5. Each Reviewer sends the spreadsheet back to the Author containing its notes (either in the email or a separate document).
-6. The Author runs a **hash review algorithm** which will verify whether the data in the table has been changed and inform the Author.
+**Step 1.** The Author creates the spreadsheet containing the table above.
+
+**Step 2.** The Author runs a **hash creation algorithm** which creates a hash code from every line in the table.
+
+**Step 3.** The Author saves the spreadsheet and sends it for the Reviewers.
+
+**Step 4.** The Reviewers open the spreadsheet and review the information. In this hypothetical scenario, the Reviewers can make notes about their reviews in a separate document or even in the body of the email, **but never** in the spreadsheet, nor changing any of its information to meet their requirements (I know this looks unreal, but creating a realistic scenario is not my target here, but the hashing exercise itself).
+
+**Step 5.** Each Reviewer sends the spreadsheet back to the Author containing its notes (either in the email or a separate document).
+
+**Step 6.** The Author runs a **hash review algorithm** which will verify whether the data in the table has been changed and inform the Author.
 
 Let's see how it looks in practice:
 
+**Step 2:** By pressing ALT+F8 the Author can access the Excel's interface for macro execution. Then, he must select the **GenerateHash** macro and click on *Execute*.
+
+![macro](/images/Generate-Hash.png)
+
+The macro script will then executes the hashing algorithm and inform whether the process was or not performed sucessfully:
+
+![macro](/images/hash-completed.png)
 
 
 [^1]: You can see that I am using only confidential information, such as address, credit card number, password etc., which looks weird, but this is because I have the intention to use this table for another exercise about cryptography.

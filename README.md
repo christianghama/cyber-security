@@ -11,7 +11,7 @@ The source Excel table is available in the spreadsheet ![Excel_Hash](Excel_Hash.
 
 ## The hashing logic
 
-The hashing logic in this exercise is as follows:
+**The hashing logic in this exercise is as follows:**
 
 **Step 1.** The Author creates the spreadsheet containing the table above.
 
@@ -25,7 +25,7 @@ The hashing logic in this exercise is as follows:
 
 **Step 6.** The Author runs a **hash review algorithm** which will verify whether the data in the table has been changed and inform the Author.
 
-Let's see how it looks in practice:
+**Let's see how it looks in practice:**
 
 **Step 2:** By pressing ALT+F8 the Author can access the Excel's interface for macro execution. Then, he must select the **GenerateHash** macro and click on *Execute*.
 
@@ -45,4 +45,5 @@ Notice that the hash codes have the same size of 12 characters (predefined by me
 
 [^1]: You can see that I am using only confidential information, such as address, credit card number, password etc., which looks weird, but this is because I have the intention to use this table for another exercise about cryptography.
 
+**Step 6:** After receiving the spreadsheet from a Reviewer, the Author must again press ALT+F8 to access the Excel's interface for macro execution. This time, he must select the **VerifyHash** macro and click on *Execute*. This macro will run the same hashing algorithm as the previous **GenerateHash** macro, but this time making an additional comparison between each hash code generated against the previous code stored in the column H. Since the first difference is found, the process will be interrupted and the user informed.
 

@@ -39,6 +39,9 @@ The codes are always generated in the second column after the final column of da
 
 ![image](/Images/hash-codes.png)
 
+The codes are formatted in white color so that they don't pollute the spreadsheet and also become invisible for the Reviewers.
+Notice that the hash codes have the same size of 12 characters (predefined by me), regardless of the size of the texts used as input. This makes the hashing algorithms an excellent ally when hiding information. So both "Hello" and "Hi, my name is John" will generate a hash code with the same size predefined.
+
 
 [^1]: You can see that I am using only confidential information, such as address, credit card number, password etc., which looks weird, but this is because I have the intention to use this table for another exercise about cryptography.
 

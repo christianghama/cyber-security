@@ -61,9 +61,10 @@ Some of these changes were really small, like replacing a single number! But as 
 
 ## The VBScripts
 
-Now let's take a look in the VBScripts that implements the hashing algorithms. I've put many comments in the code, so I hope they are self explanatory.
+Now let's take a look into the VBScripts that implements the hashing algorithms. I've put many comments in the code, so I hope they are self explanatory.
 
-### GenerateHash
+### Sub GenerateHash()
+This is the script that generates the hash codes by performing the main logic and using the SimpleHash() function as the core for the hashing.
 
 ```VBScript
 Sub GenerateHash()
@@ -108,3 +109,34 @@ ErrorHandler:
     MsgBox "An error occurred: " & Err.Description, vbCritical, "Error"
 End Sub
 ```
+### Function SimpleHash()
+This function contains the core logic of the hashing process. For simplification, I decided to use a very simple logic to calculate the hash codes based on the ASCII values of each character. You can learn more about real hashing algorithms by reading the Secure Hash [Secure Hash Algorithms](https://en.wikipedia.org/wiki/Secure_Hash_Algorithms).
+
+```VBScript
+Function SimpleHash(inputString As String) As String
+    Dim i As Long
+    Dim charValue As Long
+    Dim total As Long
+    Dim hash As String
+    
+    total = 0
+    
+    ' Calculates the total value of the characters of a string
+    For i = 1 To Len(inputString)
+        charValue = Asc(Mid(inputString, i, 1)) ' Converts the extracted character to its ASCII value.
+        total = total + charValue
+    Next i
+    
+    ' Converts the total into a hash string
+    hash = ""
+    Do While total > 0
+        ' Computes the remainder of total divided by 94. This ensures the resulting value is within the range of 0 to 93.
+        ' Converts the remainder to a character. Adding 33 shifts the value to the printable
+        ' ASCII character range (from '!' (33) to '~' (126)).
+        hash = hash & Chr((total Mod 94) + 33)
+        ' Uses integer division to reduce total, effectively moving to the next digit.
+        total = total \ 94
+    Loop
+    
+    SimpleHash = hash
+End Function

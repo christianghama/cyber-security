@@ -57,7 +57,7 @@ Now let's see how it works when verifying a spreadsheet which has been changed. 
 
 Some of these changes were really small, like replacing a single number! But as shown below, the algorithm sucessfully identifies those changes proving the efficiency of hashing to this type of investigation:
 
-![image](/Images/changes-in-data.png)
+![image](/Images/verify-hash-alert.png)
 
 
 

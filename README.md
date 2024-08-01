@@ -47,3 +47,17 @@ Notice that the hash codes have the same size of 12 characters (predefined by me
 
 **Step 6:** After receiving the spreadsheet from a Reviewer, the Author must again press ALT+F8 to access the Excel's interface for macro execution. This time, he must select the **VerifyHash** macro and click on *Execute*. This macro will run the same hashing algorithm as the previous **GenerateHash** macro, but this time making an additional comparison between each hash code generated against the previous code stored in the column H. Since the first difference is found, the process will be interrupted and the user informed.
 
+In case of the spreadsheet hasn't been changed, the macro will show a sucessfully message:
+
+![image](/Images/verify-hash-sucess.png)
+
+Now let's see how it works when verifying a spreadsheet which has been changed. For this case, I have done small changes in the lines 6, 8, and 10, in the information highlighted in red in the image below:
+
+![image](/Images/changes-in-data.png)
+
+Some of these changes were really small, like replacing a single number! But as shown below, the algorithm sucessfully identifies those changes proving the efficiency of hashing to this type of investigation:
+
+![image](/Images/changes-in-data.png)
+
+
+

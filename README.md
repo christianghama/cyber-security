@@ -110,7 +110,7 @@ ErrorHandler:
 End Sub
 ```
 ### Function SimpleHash()
-This function contains the core logic of the hashing process. For simplification, I decided to use a very simple logic to calculate the hash codes based on the ASCII values of each character. You can learn more about real hashing algorithms by reading the Secure Hash [Secure Hash Algorithms](https://en.wikipedia.org/wiki/Secure_Hash_Algorithms).
+This function contains the core logic of the hashing process. For simplification, I decided to use a very simple logic to calculate the hash codes based on the ASCII values of each character. You can learn more about real hashing algorithms by reading the [Secure Hash Algorithms](https://en.wikipedia.org/wiki/Secure_Hash_Algorithms).
 
 ```VBScript
 Function SimpleHash(inputString As String) As String

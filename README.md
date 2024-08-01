@@ -59,5 +59,52 @@ Some of these changes were really small, like replacing a single number! But as 
 
 ![image](/Images/verify-hash-alert.png)
 
+## The VBScripts
 
+Now let's take a look in the VBScripts that implements the hashing algorithms. I've put many comments in the code, so I hope they are self explanatory.
 
+### GenerateHash
+
+```VBScript
+Sub GenerateHash()
+'Generates the hash values from the spreadsheet original values and
+'stores the hashes at two columns from the last column of data, formatted
+'in white color so that they don't appear.
+    
+    On Error GoTo ErrorHandler ' Set up error handling
+    Dim wsOriginal As Worksheet
+    Dim lastRow As Long
+    Dim lastCol As Long
+    Dim r As Long, c As Long
+    Dim cellValue As String
+    Dim concatValue As String
+    Dim hashedValue As String
+    
+    ' Sets the source spreadsheet (adjust as necessary)
+    Set wsOriginal = ThisWorkbook.Sheets("Records")
+    
+    ' Finds the last line and column of the source table
+    lastRow = wsOriginal.Cells(wsOriginal.Rows.Count, 1).End(xlUp).Row
+    lastCol = wsOriginal.Cells(1, wsOriginal.Columns.Count).End(xlToLeft).Column
+    
+    ' Applies the hash algorithm to the data and records the results at two positions after the last column
+    For r = 2 To lastRow
+        concatValue = ""
+        cellValue = ""
+        For c = 1 To lastCol
+           cellValue = wsOriginal.Cells(r, c).Value
+           hashedValue = SimpleHash(cellValue)
+           concatValue = concatValue & hashedValue
+        Next c
+        wsOriginal.Cells(r, lastCol + 2).Value = "'" & concatValue ' Adds an apostrophe to force the value to be text
+        wsOriginal.Cells(r, lastCol + 2).Font.Color = RGB(255, 255, 255) ' Defines the font color as white
+    Next r
+    ' Display a success message
+    MsgBox "Hash generation completed successfully!", vbInformation, "Success"
+    Exit Sub
+
+ErrorHandler:
+    ' Handle any errors that occur
+    MsgBox "An error occurred: " & Err.Description, vbCritical, "Error"
+End Sub
+```

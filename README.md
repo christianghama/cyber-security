@@ -140,3 +140,61 @@ Function SimpleHash(inputString As String) As String
     
     SimpleHash = hash
 End Function
+```
+### Sub VerifyHash()
+```VBScript
+Sub VerifyHash()
+' Verifies the hash values in the original spreadsheet original values and
+' stores the hashes at two columns from the last column of data, formatted
+' in white color so that they don't appear.
+  
+    Dim wsOriginal As Worksheet
+    Dim lastRow As Long
+    Dim lastCol As Long
+    Dim r As Long, c As Long
+    Dim cellValue As String
+    Dim concatValue As String
+    Dim recalcHash As String
+    Dim storedHash As String
+    Dim isCorrect As Boolean
+    Dim mismatchedRows As String
+    
+    ' Sets the source spreadsheet (adjust as necessary)
+    Set wsOriginal = ThisWorkbook.Sheets("Records")
+    
+    ' Finds the last line and column of the source table
+    lastRow = wsOriginal.Cells(wsOriginal.Rows.Count, 1).End(xlUp).Row
+    lastCol = wsOriginal.Cells(1, wsOriginal.Columns.Count).End(xlToLeft).Column
+    
+    ' Considers that the original hash values are stored at two columns after the last data column
+    Dim hashCol As Long
+    hashCol = lastCol + 2
+    
+    ' Verifies the hashs integrity
+    isCorrect = True
+    mismatchedRows = ""
+    For r = 2 To lastRow ' Considering the first row always has a header
+        concatValue = ""
+        For c = 1 To (lastCol)
+           cellValue = wsOriginal.Cells(r, c).Value
+           recalcHash = SimpleHash(cellValue)
+           concatValue = concatValue & recalcHash
+        Next c
+        storedHash = wsOriginal.Cells(r, hashCol).Value
+        If concatValue <> storedHash Then
+            isCorrect = False
+            mismatchedRows = mismatchedRows & "Row " & r & "; "
+        End If
+    Next r
+    
+    ' Shows a message with the result of the verification
+    If isCorrect Then
+        MsgBox "The information has not been changed.", vbInformation
+    Else
+      ' Remove the trailing semicolon and space from the mismatchedCells string
+      If Len(mismatchedRows) > 0 Then
+        mismatchedRows = Left(mismatchedRows, Len(mismatchedRows) - 2)
+      End If
+      MsgBox "The information has been changed in the following rows: " & mismatchedRows, vbExclamation
+    End If
+End Sub

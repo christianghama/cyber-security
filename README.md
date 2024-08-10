@@ -8,7 +8,7 @@ The exercise consists of processing a given hypotetical Excel table which contai
 
 ## The source table
 
-The source Excel table is available in the spreadsheet ![Excel_Hash](Excel_Hash.xlsm) and consists of a hypothetic list of people's information[^1], as shown below:
+The source Excel table is available in the spreadsheet [Excel_Hash](Excel_Hash.xlsm) and consists of a hypothetic list of people's information[^1], as shown below:
 
 ![table](/Images/table-sample.png)
 
